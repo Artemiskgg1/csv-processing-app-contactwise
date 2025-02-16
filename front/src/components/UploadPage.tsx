@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 import axios from "axios";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+// import Navbar from "@/components/Navbar";
 
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -31,11 +36,32 @@ export default function UploadPage() {
   };
 
   return (
-    <div>
-      <h1>Upload CSV</h1>
-      <input type="file" accept=".csv" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
-      <p>{message}</p>
+    <div className="flex flex-col items-center p-6">
+      {/* Navbar */}
+      {/* <Navbar /> */}
+
+      {/* Upload Section */}
+      <Card className="mt-10 w-96">
+        <CardHeader>
+          <CardTitle>Upload Your CSV File</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Label htmlFor="file-upload" className="text-sm font-medium">
+            Select File
+          </Label>
+          <Input
+            id="file-upload"
+            type="file"
+            accept=".csv"
+            onChange={handleFileChange}
+            className="mb-4"
+          />
+          <Button onClick={handleUpload} className="w-full">
+            Upload
+          </Button>
+          {message && <p className="mt-4 text-sm text-gray-700">{message}</p>}
+        </CardContent>
+      </Card>
     </div>
   );
 }
