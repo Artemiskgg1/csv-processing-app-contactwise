@@ -1,9 +1,15 @@
 import Queue from "bull";
 import axios from "axios";
 import { redisClient } from "../redis.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const csvQueue = new Queue("csvQueue", {
-  redis: { host: "redis", port: 6379 },
+  redis: {
+    host: process.env.REDIS_HOST || "localhost",
+    port: Number(process.env.REDIS_PORT) || 6379,
+  },
 });
 
 const isWorkerInitialized = false; // Prevent multiple registrations

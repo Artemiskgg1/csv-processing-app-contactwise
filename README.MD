@@ -2,7 +2,9 @@
 
 ## Overview
 
-This project processes user data from a CSV file by adding jobs to a Bull queue and handling them asynchronously. The backend is built with Node.js (Express) and TypeScript, and Redis is used as a queue store via Docker.
+This project processes user data from a CSV file by adding jobs to a Bull queue and handling them asynchronously. The backend is built with Node.js (Express) and TypeScript, while Redis is used as a queue store via Docker. The frontend is built using Next.js with ShadCN UI for a modern and accessible design.
+
+![alt text](image.png)
 
 ## Features
 
@@ -10,7 +12,7 @@ This project processes user data from a CSV file by adding jobs to a Bull queue 
 - Process user data asynchronously using Bull queue.
 - Store jobs in Redis (running via Docker).
 - Mock API call for user creation using JSONPlaceholder.
-- Frontend built with Next.js for file uploads.
+- Frontend built with Next.js and ShadCN UI for file uploads.
 - Docker Compose setup for easy containerization.
 
 ## Tech Stack
@@ -18,7 +20,7 @@ This project processes user data from a CSV file by adding jobs to a Bull queue 
 - **Backend:** Node.js (Express, TypeScript)
 - **Queue:** Bull (Redis-based job queue)
 - **Database (Mocked):** JSONPlaceholder
-- **Frontend:** Next.js (React)
+- **Frontend:** Next.js (React) with ShadCN UI
 - **Containerization:** Docker & Docker Compose
 
 ## Installation & Setup
@@ -94,17 +96,11 @@ docker-compose down
 
 - Uploads a CSV file containing user data.
 
-### Get Job Status
-
-**GET** `/jobs/:id`
-
-- Fetches the status of a job using its ID.
-
 ## Environment Variables
 
 Create a `.env` file in the `server` directory:
 
-```
+```sh
 PORT=7000
 REDIS_HOST=redis
 REDIS_PORT=6379
