@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
 
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -18,7 +19,7 @@ export default function UploadPage() {
   };
 
   const handleUpload = async () => {
-    if (!file) return alert("Please select a file");
+    if (!file) return toast.error("Please select a file");
 
     const formData = new FormData();
     formData.append("file", file);
