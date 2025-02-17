@@ -33,7 +33,7 @@ export default function UploadPage() {
 
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/csv/upload",
+        "https://csv-processing-app-contactwise.onrender.com/api/csv/upload",
         formData
       );
 
