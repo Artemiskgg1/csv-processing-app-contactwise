@@ -6,10 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const csvQueue = new Queue("csvQueue", {
-  redis: {
-    host: process.env.REDIS_HOST || "localhost",
-    port: Number(process.env.REDIS_PORT) || 6379,
-  },
+  redis: process.env.REDIS_URL,
 });
 
 const isWorkerInitialized = false; // Prevent multiple registrations
