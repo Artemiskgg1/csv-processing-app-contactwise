@@ -9,7 +9,14 @@ dotenv.config();
 const app: Application = express();
 const PORT = process.env.PORT || 7000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://csv-processing-app-contactwise.vercel.app",
+    methods: ["POST", "GET"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
+
 app.use(express.json());
 
 // CSV File Routes
