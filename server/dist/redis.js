@@ -1,7 +1,4 @@
 import Redis from "ioredis";
-export const redisClient = new Redis.default({
-    host: "redis",
-    port: 6379,
-});
-redisClient.on("connect", () => console.log("✅ Redis connected"));
-redisClient.on("error", (err) => console.error("❌ Redis error:", err));
+import dotenv from "dotenv";
+dotenv.config();
+export const redisClient = new Redis.default(process.env.REDIS_URL);
