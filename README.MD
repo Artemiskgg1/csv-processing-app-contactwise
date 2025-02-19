@@ -50,7 +50,7 @@ npm install
 npm run dev
 ```
 
-- The Express server will run on `http://localhost:7000`
+- The Express server will run on `http://localhost:7000`.
 
 #### Frontend
 
@@ -60,14 +60,20 @@ npm install
 npm run dev
 ```
 
-- The Next.js app will run on `http://localhost:3000`
+- The Next.js app will run on `http://localhost:3000`.
 
 #### Redis (Without Docker)
 
-Ensure Redis is installed and running locally:
+If Redis is **installed manually**, start it using:
 
 ```sh
 redis-server
+```
+
+Alternatively, if using **Docker Redis**, start a container:
+
+```sh
+docker run --name redis-container -p 6379:6379 -d redis
 ```
 
 ### Running with Docker
@@ -92,7 +98,7 @@ docker-compose down
 
 ### Upload CSV File
 
-**POST** `/upload`
+**POST** `/api/csv/upload`
 
 - Uploads a CSV file containing user data.
 
@@ -102,9 +108,10 @@ Create a `.env` file in the `server` directory:
 
 ```sh
 PORT=7000
-REDIS_HOST=redis
-REDIS_PORT=6379
+REDIS_URL=redis://localhost:6379  # Use this for local development (Docker Redis)
 ```
+
+- In **production**, set `REDIS_URL` to your actual Redis service URL.
 
 ## License
 

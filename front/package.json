@@ -18,6 +18,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "motion": "^12.4.5",
     "next": "^15.1.7",
+    "papaparse": "^5.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sonner": "^1.7.4",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/papaparse": "^5.3.15",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8",
