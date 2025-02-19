@@ -3,7 +3,6 @@ import fs from "fs";
 import csv from "csv-parser";
 import { csvQueue } from "../jobs/worker.js";
 
-// Extend Request type to include multer's file property
 interface MulterRequest extends Request {
   file?: Express.Multer.File;
 }

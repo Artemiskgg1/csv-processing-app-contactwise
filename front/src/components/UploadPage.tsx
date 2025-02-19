@@ -26,7 +26,7 @@ export default function UploadPage() {
     }
 
     setStatus("processing");
-    const toastId = toast.loading("Uploading file..."); // Store toast ID
+    const toastId = toast.loading("Uploading file...");
 
     const formData = new FormData();
     formData.append("file", file);
@@ -37,19 +37,18 @@ export default function UploadPage() {
         formData
       );
 
-      toast.dismiss(toastId); // Dismiss loading toast
+      toast.dismiss(toastId);
       setStatus("processed");
       toast.success("File uploaded successfully!");
     } catch (error) {
-      toast.dismiss(toastId); // Dismiss loading toast on error
+      toast.dismiss(toastId);
       setStatus("failed");
       toast.error("Upload failed. Please try again.");
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-zinc-900 text-white">
-      {/* <h1 className="text-3xl font-bold mb-6">CSV File Upload</h1> */}
+    <div className="flex flex-col items-center justify-center m-2 text-white">
       <Card className="w-96 bg-zinc-200  shadow-lg">
         <CardHeader>
           <CardTitle>Upload Your CSV File</CardTitle>

@@ -12,9 +12,7 @@ app.use(cors({
     allowedHeaders: ["Content-Type"],
 }));
 app.use(express.json());
-// CSV File Routes
 app.use("/api/csv", csvRoutes);
-// Start Queue Worker
 initQueueWorker();
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
