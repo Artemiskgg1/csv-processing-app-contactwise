@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 7000;
 app.use(cors({
-    origin: "https://csv-processing-app-contactwise.vercel.app",
+    origin: "https://csv-queue.vercel.app",
     methods: ["POST", "GET"],
     allowedHeaders: ["Content-Type"],
 }));
