@@ -88,7 +88,49 @@ export default function UploadPage() {
         return;
       }
 
-      setFile(selectedFile);
+      // Read and parse CSV file
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        if (!e.target?.result) return;
+
+        const csvText = e.target.result as string;
+
+        Papa.parse(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (result) => {
+            const headers = result.meta.fields || [];
+            if (
+              headers.length !== 2 ||
+              !headers.includes("name") ||
+              !headers.includes("email")
+            ) {
+              toast.error(
+                "Invalid CSV format. The file must contain only 'name' and 'email' columns."
+              );
+              setFile(null);
+              return;
+            }
+            const isValid = result.data.every(
+              (row: any) => row.name && row.email
+            );
+            if (!isValid) {
+              toast.error(
+                "Invalid CSV content. Ensure all rows have 'name' and 'email' values."
+              );
+              setFile(null);
+              return;
+            }
+            setFile(selectedFile);
+          },
+          error: () => {
+            toast.error("Error parsing the CSV file.");
+            setFile(null);
+          },
+        });
+      };
+
+      reader.readAsText(selectedFile);
     }
   };
 
