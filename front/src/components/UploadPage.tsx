@@ -119,7 +119,7 @@ export default function UploadPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-zinc-900 text-white min-h-screen">
+    <div className="flex flex-col items-center justify-center text-white min-h-screen">
       <Card className="w-96 bg-zinc-200 shadow-lg">
         <CardHeader>
           <CardTitle>Upload Your CSV File</CardTitle>
