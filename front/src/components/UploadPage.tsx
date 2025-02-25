@@ -161,8 +161,8 @@ export default function UploadPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-white min-h-screen">
-      <Card className="w-96 bg-zinc-200 shadow-lg">
+    <div className="flex flex-col items-center justify-center text-white">
+      <Card className=" w-72 md:w-96 bg-zinc-200 shadow-lg">
         <CardHeader>
           <CardTitle>Upload Your CSV File</CardTitle>
         </CardHeader>
@@ -177,7 +177,10 @@ export default function UploadPage() {
             onChange={handleFileChange}
             className="mb-4"
           />
-          <Button onClick={handleUpload} className="w-full">
+          <Button
+            onClick={handleUpload}
+            className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          >
             Upload
           </Button>
           {status === "uploading" && progress !== null && (
