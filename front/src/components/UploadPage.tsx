@@ -179,7 +179,7 @@ export default function UploadPage() {
           />
           <Button
             onClick={handleUpload}
-            className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+            className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600"
           >
             Upload
           </Button>
@@ -210,7 +210,7 @@ export default function UploadPage() {
 
       {jobData.length > 0 && (
         <div className="mt-6 w-full max-w-2xl">
-          <h2 className="text-xl font-semibold text-center mb-4">
+          <h2 className="text-2xl font-bold text-center mb-4">
             Live Processed Jobs
           </h2>
           <Table className="border border-gray-700">

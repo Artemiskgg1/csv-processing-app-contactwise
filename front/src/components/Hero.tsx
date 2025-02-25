@@ -3,8 +3,8 @@ import React from "react";
 const Hero = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center text-center px-6 mb-2">
-      <h1 className="text-2xl font-bold text-white md:text-5xl">
-        The best {""}
+      <h1 className="text-3xl font-unigeo font-bold text-white md:text-7xl">
+        The Best {""}
         <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
           CSV Parser
         </span>

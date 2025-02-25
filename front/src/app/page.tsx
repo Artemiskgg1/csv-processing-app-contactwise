@@ -11,7 +11,7 @@ export default function Home() {
         <Navbar />
       </div>
 
-      <div className="flex flex-col flex-grow items-center justify-center">
+      <div className="flex flex-col flex-grow items-center justify-center mt-20">
         <Hero />
         <div className="w-full flex items-center justify-center mt-10">
           <UploadPage />

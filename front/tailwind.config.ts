@@ -65,6 +65,7 @@ export default {
       },
       fontFamily: {
         hatton: ["hatton", "sans-serif"],
+        unigeo: ["unigeo", "sans-serif"],
       },
     },
   },

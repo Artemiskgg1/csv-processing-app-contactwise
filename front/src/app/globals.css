@@ -63,6 +63,8 @@ body {
   @font-face {
     font-family: "hatton";
     src: url("/fonts/hatton.otf") format("opentype");
+    font-family: "unigeo";
+    src: url("/fonts/unigeo.ttf") format("opentype");
   }
 }
 
